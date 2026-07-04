@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Selected work from Eagle Byte — real products shipped for real businesses across commerce, portfolio, and organic marketplaces.",
   keywords:
-    "projects, portfolio, V2 Enterprise, Sitaram Organic, client work, product engineering, web development results",
+    "Eagle Byte projects, Eagle Byte portfolio, web development portfolio India, V2 Enterprise, Sitaram Organic, client case studies, product engineering, web development results, ecommerce website examples, business website portfolio, Kartik Parmar projects, software agency work samples",
   alternates: {
     canonical: "https://eaglebyte.in/projects/",
   },
@@ -18,12 +18,18 @@ export const metadata: Metadata = {
     title: "Projects — Eagle Byte",
     description: "Real products. Real results.",
     url: "https://eaglebyte.in/projects/",
-    images: [{ url: "https://eaglebyte.in/og-cover.jpg" }],
+    images: [
+      {
+        url: "https://ik.imagekit.io/eaglebyte/public/eaglebyte-logo-transparent.webp",
+      },
+    ],
   },
   twitter: {
     title: "Projects — Eagle Byte",
     description: "Real products. Real results.",
-    images: ["https://eaglebyte.in/og-cover.jpg"],
+    images: [
+      "https://ik.imagekit.io/eaglebyte/public/eaglebyte-logo-transparent.webp",
+    ],
   },
 };
 

@@ -1,0 +1,32 @@
+# Eagle Byte
+
+> Eagle Byte is a premium digital engineering studio founded by Kartik Parmar,
+> based in Gujarat, India, serving clients worldwide. It engineers
+> high-performance websites, enterprise web applications, mobile apps,
+> AI agents, workflow automation, and cloud infrastructure.
+
+Founder: Kartik Parmar (Founder & Lead Developer)
+Location: Gujarat, India
+Contact: contact@eaglebyte.in | +91 97734 05142
+Website: https://eaglebyte.in
+
+## Services
+
+- Custom Website Development: marketing sites, e-commerce, headless CMS, landing pages
+- Enterprise Web Applications: role-based access, audit trails, integrations
+- Mobile Applications: iOS, Android, React Native, offline-first sync
+- AI & Machine Learning: autonomous AI agents, LLM integration, chatbots, predictive analytics
+- Workflow Automation: business process automation and digitization
+- SaaS Development: MVP to scale, multi-tenant platforms
+- Cloud & DevOps: AWS/GCP, CI/CD, Docker, Kubernetes, cost optimization
+- Product Design: UI/UX design systems, prototyping, brand identity
+- Technical Consulting: architecture, security, performance and SEO audits, fractional CTO
+
+## Pages
+
+- [Home](https://eaglebyte.in/): studio overview
+- [Services](https://eaglebyte.in/services/): full list of engineering services
+- [Solutions](https://eaglebyte.in/solutions/): industry solutions — healthcare, finance, education, manufacturing, e-commerce, startups
+- [Projects](https://eaglebyte.in/projects/): shipped client work, including V2 Enterprise and Sitaram Organic
+- [About](https://eaglebyte.in/about/): profile of founder Kartik Parmar
+- [Contact](https://eaglebyte.in/contact/): book a free strategy call, response within one business day

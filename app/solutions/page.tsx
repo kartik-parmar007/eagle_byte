@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "Enterprise-ready solutions for healthcare, finance, education, manufacturing, e-commerce, and startups.",
   keywords:
-    "healthcare software, fintech applications, edtech platforms, manufacturing automation, ecommerce development, startup MVP, industry solutions",
+    "Eagle Byte solutions, healthcare software development, hospital management systems, fintech application development, financial software India, edtech platform development, learning management systems, manufacturing automation software, inventory management systems, ecommerce website development, online store development India, marketplace development, startup MVP development, SaaS for startups, industry software solutions, custom ERP development, CRM development, booking and scheduling systems",
   alternates: {
     canonical: "https://eaglebyte.in/solutions/",
   },
@@ -34,12 +34,18 @@ export const metadata: Metadata = {
     title: "Solutions by Industry — Eagle Byte",
     description: "Software patterns adapted for your industry.",
     url: "https://eaglebyte.in/solutions/",
-    images: [{ url: "https://eaglebyte.in/og-cover.jpg" }],
+    images: [
+      {
+        url: "https://ik.imagekit.io/eaglebyte/public/eaglebyte-logo-transparent.webp",
+      },
+    ],
   },
   twitter: {
     title: "Solutions by Industry — Eagle Byte",
     description: "Software patterns adapted for your industry.",
-    images: ["https://eaglebyte.in/og-cover.jpg"],
+    images: [
+      "https://ik.imagekit.io/eaglebyte/public/eaglebyte-logo-transparent.webp",
+    ],
   },
 };
 

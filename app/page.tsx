@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     "Premium digital engineering studio building websites, enterprise applications, and AI-powered automation for serious businesses.",
   keywords:
-    "digital engineering, custom website development, AI automation, workflow automation, enterprise web applications, SaaS development, cloud solutions, Eagle Byte",
+    "Eagle Byte, EagleByte, Eagle Byte Digital, Eagle Byte India, Kartik Parmar, Kartik Parmar Eagle Byte, digital engineering studio, custom website development, website development company India, web development Gujarat, AI automation agency, AI agents development, workflow automation services, enterprise web applications, SaaS development company, mobile app development India, Next.js development agency, cloud solutions, DevOps services, UI UX design India, hire web developers India, digital transformation company",
   alternates: {
     canonical: "https://eaglebyte.in/",
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     url: "https://eaglebyte.in/",
     images: [
       {
-        url: "https://eaglebyte.in/og-cover.jpg",
+        url: "https://ik.imagekit.io/eaglebyte/public/eaglebyte-logo-transparent.webp",
         width: 1200,
         height: 630,
         alt: "Eagle Byte — Build Faster. Automate Smarter.",
@@ -37,74 +37,19 @@ export const metadata: Metadata = {
     title: "Eagle Byte — Digital Engineering Studio",
     description:
       "Websites, enterprise apps, AI agents, and workflow automation.",
-    images: ["https://eaglebyte.in/og-cover.jpg"],
+    images: [
+      "https://ik.imagekit.io/eaglebyte/public/eaglebyte-logo-transparent.webp",
+    ],
   },
 };
 
-const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Eagle Byte",
-  url: "https://eaglebyte.in",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: "https://eaglebyte.in/?q={search_term_string}",
-    "query-input": "required name=search_term_string",
-  },
-};
-
-const orgJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Eagle Byte",
-  url: "https://eaglebyte.in",
-  logo: "https://eaglebyte.in/eaglebyte-logo-transparent.webp",
-  description:
-    "Premium digital engineering studio building enterprise websites, business applications and AI-powered automation.",
-  sameAs: ["https://eaglebyte.in"],
-  contactPoint: [
-    {
-      "@type": "ContactPoint",
-      contactType: "sales",
-      email: "contact@eaglebye.in",
-      areaServed: "Worldwide",
-      availableLanguage: ["English"],
-    },
-  ],
-};
-
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "Eagle Byte",
-  url: "https://eaglebyte.in",
-  image: "https://eaglebyte.in/og-cover.jpg",
-  priceRange: "$$$",
-  serviceType: [
-    "Custom Website Development",
-    "Enterprise Web Applications",
-    "AI Agents & Automation",
-    "Workflow Automation",
-    "SaaS Development",
-    "Cloud Solutions",
-  ],
-};
+// Organization, WebSite, and ProfessionalService JSON-LD is emitted once for
+// every page from app/layout.tsx as a single cross-linked @graph — duplicating
+// it here would register conflicting entities with search engines.
 
 export default function Home() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
       <Hero />
       <ServicesBrief />
       <FeaturedProjects />
