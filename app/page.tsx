@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { Hero } from "@/components/home/Hero";
-import { ServicesBrief } from "@/components/home/ServicesBrief";
-import { FeaturedProjects } from "@/components/home/FeaturedProjects";
-import { WhyEagleByte } from "@/components/home/WhyEagleByte";
-import { AIWorkflow } from "@/components/home/AIWorkflow";
-import { Process } from "@/components/home/Process";
-import { FAQ } from "@/components/home/FAQ";
-import { QuoteForm } from "@/components/home/QuoteForm";
+
+const ServicesBrief = dynamic(() => import("@/components/home/ServicesBrief").then((mod) => mod.ServicesBrief));
+const FeaturedProjects = dynamic(() => import("@/components/home/FeaturedProjects").then((mod) => mod.FeaturedProjects));
+const WhyEagleByte = dynamic(() => import("@/components/home/WhyEagleByte").then((mod) => mod.WhyEagleByte));
+const AIWorkflow = dynamic(() => import("@/components/home/AIWorkflow").then((mod) => mod.AIWorkflow));
+const Process = dynamic(() => import("@/components/home/Process").then((mod) => mod.Process));
+const FAQ = dynamic(() => import("@/components/home/FAQ").then((mod) => mod.FAQ));
+const QuoteForm = dynamic(() => import("@/components/home/QuoteForm").then((mod) => mod.QuoteForm));
 
 export const metadata: Metadata = {
   title: "Eagle Byte — Build Faster. Automate Smarter. Scale Without Limits.",

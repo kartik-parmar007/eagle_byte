@@ -15,33 +15,95 @@ import {
 } from "lucide-react";
 import { Reveal } from "@/components/shared/Reveal";
 import { contactInfo } from "@/lib/site-content";
+import { insertContactMessage } from "@/lib/supabase";
+
+const BUDGETS = [
+  "Under ₹10K",
+  "₹10K – ₹30K",
+  "₹30K – ₹75K",
+  "₹75K – ₹100K",
+  "₹100K+",
+] as const;
 
 const schema = z.object({
-  name: z.string().trim().min(2, "Enter your name").max(80),
-  email: z.string().trim().email("Enter a valid email").max(120),
-  phone: z.string().trim().min(6, "Enter a valid phone").max(20),
-  company: z.string().trim().max(120).optional().or(z.literal("")),
-  projectType: z.string().min(1, "Select a project type"),
-  budget: z.string().min(1, "Select a budget range"),
-  message: z.string().trim().min(10, "Tell us a bit more").max(2000),
+  name: z
+    .string()
+    .trim()
+    .min(2, "Name must be at least 2 characters")
+    .max(80, "Name must be under 80 characters")
+    .regex(
+      /^[A-Za-z][A-Za-z\s.'-]*$/,
+      "Name can only contain letters, spaces, and . ' -"
+    ),
+  email: z
+    .string()
+    .trim()
+    .min(5, "Enter your email address")
+    .max(120, "Email must be under 120 characters")
+    .email("Enter a valid email address"),
+  phone: z
+    .string()
+    .trim()
+    .regex(/^[\d\s-]+$/, "Phone can only contain digits")
+    .refine(
+      (v) => v.replace(/\D/g, "").length === 10,
+      "Enter a 10-digit mobile number (no +91 needed)"
+    ),
+  company: z
+    .string()
+    .trim()
+    .max(120, "Company must be under 120 characters")
+    .optional()
+    .or(z.literal("")),
+  projectTitle: z
+    .string()
+    .trim()
+    .min(3, "Give your project a short title (at least 3 characters)")
+    .max(120, "Project title must be under 120 characters"),
+  budget: z.enum(BUDGETS, {
+    message: "Select a budget range",
+  }),
+  message: z
+    .string()
+    .trim()
+    .min(100, "Please describe your project in at least 100 characters")
+    .max(2000, "Message must be under 2000 characters"),
 });
 type Values = z.infer<typeof schema>;
 
 export function ContactFormClient() {
   const [done, setDone] = useState(false);
+  const [failed, setFailed] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<Values>({ resolver: zodResolver(schema) });
+  } = useForm<Values>({
+    resolver: zodResolver(schema),
+    // Validate on blur first, then re-validate as the user types a fix
+    mode: "onTouched",
+  });
 
   const onSubmit = async (v: Values) => {
-    await new Promise((r) => setTimeout(r, 700));
-    console.log("[Eagle Byte] Contact", { ...v, email: "***" });
-    setDone(true);
-    reset();
-    setTimeout(() => setDone(false), 8000);
+    setFailed(false);
+    try {
+      await insertContactMessage({
+        name: v.name,
+        email: v.email,
+        // Store digits only, e.g. "98765 43210" -> "9876543210"
+        phone: v.phone.replace(/\D/g, ""),
+        company: v.company?.trim() ? v.company.trim() : null,
+        project_title: v.projectTitle,
+        budget: v.budget,
+        message: v.message,
+      });
+      setDone(true);
+      reset();
+      setTimeout(() => setDone(false), 8000);
+    } catch {
+      setFailed(true);
+    }
   };
 
   return (
@@ -123,6 +185,7 @@ export function ContactFormClient() {
           <Reveal delay={0.1}>
             <form
               onSubmit={handleSubmit(onSubmit)}
+              noValidate
               className="rounded-3xl border border-border bg-white dark:bg-card p-7 md:p-10 shadow-[var(--shadow-card)]"
             >
               {done && (
@@ -134,26 +197,48 @@ export function ContactFormClient() {
                   </div>
                 </div>
               )}
+              {failed && (
+                <div
+                  role="alert"
+                  className="mb-6 rounded-2xl border border-destructive/30 bg-destructive/5 p-4 text-[14px] text-destructive"
+                >
+                  Couldn&apos;t send your message. Please try again, or email
+                  us directly at {contactInfo.email}.
+                </div>
+              )}
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field label="Full Name *" error={errors.name?.message}>
                   <input
                     {...register("name")}
                     className={inputCls}
                     placeholder="Your full name"
+                    autoComplete="name"
+                    maxLength={80}
+                    aria-invalid={!!errors.name}
                   />
                 </Field>
                 <Field label="Email *" error={errors.email?.message}>
                   <input
                     {...register("email")}
+                    type="email"
                     className={inputCls}
                     placeholder="you@company.com"
+                    autoComplete="email"
+                    inputMode="email"
+                    maxLength={120}
+                    aria-invalid={!!errors.email}
                   />
                 </Field>
                 <Field label="Phone *" error={errors.phone?.message}>
                   <input
                     {...register("phone")}
+                    type="tel"
                     className={inputCls}
-                    placeholder="+91 XXXXX XXXXX"
+                    placeholder="10-digit mobile number"
+                    autoComplete="tel-national"
+                    inputMode="numeric"
+                    maxLength={13}
+                    aria-invalid={!!errors.phone}
                   />
                 </Field>
                 <Field label="Company" error={errors.company?.message}>
@@ -161,43 +246,36 @@ export function ContactFormClient() {
                     {...register("company")}
                     className={inputCls}
                     placeholder="Company name"
+                    autoComplete="organization"
+                    maxLength={120}
+                    aria-invalid={!!errors.company}
                   />
                 </Field>
                 <Field
-                  label="Project Type *"
-                  error={errors.projectType?.message}
+                  label="Project Title *"
+                  error={errors.projectTitle?.message}
                 >
-                  <select
-                    {...register("projectType")}
+                  <input
+                    {...register("projectTitle")}
                     className={inputCls}
-                    defaultValue=""
-                  >
-                    <option value="" disabled>
-                      Select…
-                    </option>
-                    <option>Custom Website</option>
-                    <option>Enterprise Web App</option>
-                    <option>AI Agent / Automation</option>
-                    <option>SaaS Product</option>
-                    <option>Cloud & DevOps</option>
-                    <option>Mobile Application</option>
-                    <option>Other</option>
-                  </select>
+                    placeholder="e.g. E-commerce site for my store"
+                    maxLength={120}
+                    aria-invalid={!!errors.projectTitle}
+                  />
                 </Field>
                 <Field label="Budget *" error={errors.budget?.message}>
                   <select
                     {...register("budget")}
                     className={inputCls}
                     defaultValue=""
+                    aria-invalid={!!errors.budget}
                   >
                     <option value="" disabled>
                       Select…
                     </option>
-                    <option>Under ₹2L</option>
-                    <option>₹2L – ₹5L</option>
-                    <option>₹5L – ₹10L</option>
-                    <option>₹10L – ₹20L</option>
-                    <option>₹20L +</option>
+                    {BUDGETS.map((b) => (
+                      <option key={b}>{b}</option>
+                    ))}
                   </select>
                 </Field>
               </div>
@@ -207,7 +285,9 @@ export function ContactFormClient() {
                     {...register("message")}
                     rows={6}
                     className={inputCls + " resize-y min-h-[140px]"}
-                    placeholder="What are you trying to build? Timeline? Current stack?"
+                    placeholder="What are you trying to build? Goals, timeline, current stack… (at least 100 characters)"
+                    maxLength={2000}
+                    aria-invalid={!!errors.message}
                   />
                 </Field>
               </div>
@@ -227,8 +307,10 @@ export function ContactFormClient() {
   );
 }
 
+// 16px on mobile is required: iOS Safari force-zooms the page when
+// focusing any input with a font size below 16px
 const inputCls =
-  "w-full rounded-xl border border-border bg-white dark:bg-background px-4 py-3 text-[14px] text-ink placeholder:text-muted-foreground/70 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all";
+  "w-full rounded-xl border border-border bg-white dark:bg-background px-4 py-3 text-[16px] md:text-[14px] text-ink placeholder:text-muted-foreground/70 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all";
 
 function Field({
   label,

@@ -185,6 +185,9 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    /* Safety net: decorative elements must never widen the page on mobile.
+       `clip` blocks horizontal panning without creating a scroll container. */
+    overflow-x: clip;
   }
 
   h1, h2, h3, h4, h5 {

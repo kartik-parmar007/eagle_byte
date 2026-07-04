@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { Analytics, GtmNoScript } from "@/components/site/Analytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -54,6 +55,9 @@ export const metadata: Metadata = {
     site: "@eaglebyte",
     creator: "@eaglebyte",
   },
+  verification: {
+    google: "V5AZ_iJGTAamzZjX4DaZjhm1xmHubexQK29oD_V7EGE",
+  },
 };
 
 const orgJsonLd = {
@@ -93,9 +97,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://ik.imagekit.io" />
       </head>
       <body className="flex min-h-screen flex-col bg-background text-foreground antialiased">
+        <GtmNoScript />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

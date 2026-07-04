@@ -110,8 +110,10 @@ export function QuoteFormFields() {
   );
 }
 
+// 16px on mobile is required: iOS Safari force-zooms the page when
+// focusing any input with a font size below 16px
 const inputCls =
-  "w-full rounded-xl border border-border bg-white dark:bg-background px-4 py-3 text-[14px] text-ink placeholder:text-muted-foreground/70 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all";
+  "w-full rounded-xl border border-border bg-white dark:bg-background px-4 py-3 text-[16px] md:text-[14px] text-ink placeholder:text-muted-foreground/70 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all";
 
 function Field({
   label,

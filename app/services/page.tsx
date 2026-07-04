@@ -70,7 +70,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative pb-16 md:pb-20">
+      <section className="relative pb-16 md:pb-20 overflow-hidden">
         {/* Light blue tinted backdrop */}
         <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#EAF2FF]/70 via-[#F4F8FF]/60 to-transparent dark:from-[#0A5CFF]/8 dark:via-[#060A14]/60 dark:to-transparent" />
         <div className="pointer-events-none absolute -z-10 top-24 left-1/2 -translate-x-1/2 h-[420px] w-[720px] rounded-full bg-[#0A5CFF]/10 blur-[120px]" />
