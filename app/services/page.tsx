@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   description:
     "Eight focused services — custom websites, enterprise apps, AI agents, workflow automation, SaaS, DevOps, cloud, and maintenance.",
   keywords:
-    "custom website development, enterprise web applications, AI agents, workflow automation, SaaS development, cloud DevOps, business process digitization, maintenance and support",
+    "Eagle Byte services, custom website development, website design and development company, enterprise web applications, enterprise software development, AI agents development, autonomous AI agents, LLM integration services, AI chatbot development, workflow automation services, business process automation, SaaS development company, SaaS product engineering, MVP development, mobile app development, React Native development, cloud DevOps services, AWS GCP consulting, CI/CD pipelines, Docker Kubernetes, business process digitization, website maintenance and support, UI UX design services, e-commerce development, headless CMS development, Next.js React development",
   alternates: {
     canonical: "https://eaglebyte.in/services/",
   },
@@ -39,12 +39,18 @@ export const metadata: Metadata = {
     title: "Services — Eagle Byte",
     description: "Engineering practices for teams that ship.",
     url: "https://eaglebyte.in/services/",
-    images: [{ url: "https://eaglebyte.in/og-cover.jpg" }],
+    images: [
+      {
+        url: "https://ik.imagekit.io/eaglebyte/public/eaglebyte-logo-transparent.webp",
+      },
+    ],
   },
   twitter: {
     title: "Services — Eagle Byte",
     description: "Engineering practices for teams that ship.",
-    images: ["https://eaglebyte.in/og-cover.jpg"],
+    images: [
+      "https://ik.imagekit.io/eaglebyte/public/eaglebyte-logo-transparent.webp",
+    ],
   },
 };
 

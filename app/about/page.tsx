@@ -24,32 +24,53 @@ const pillars = [
   },
 ];
 
+const FOUNDER_PHOTO_URL =
+  "https://ik.imagekit.io/eaglebyte/public/kartik-parmar.webp";
+
 export const metadata: Metadata = {
-  title: "About Eagle Byte — Founder-led Digital Engineering Studio",
+  title: { absolute: "Kartik Parmar — Founder & Lead Developer | Eagle Byte" },
   description:
-    "Eagle Byte is a founder-led digital engineering studio building websites, enterprise applications, and AI-powered automation.",
+    "Meet Kartik Parmar, founder and lead developer of Eagle Byte — a digital engineering studio in Gujarat, India building websites, enterprise applications, and AI-powered automation.",
   keywords:
-    "about Eagle Byte, digital engineering studio, founder-led agency, innovation, engineering excellence, automation, digital transformation",
+    "Kartik Parmar, Kartik Parmar Eagle Byte, Kartik Parmar founder, Kartik Parmar developer, Kartik Parmar full stack developer, Kartik Parmar Gujarat, about Eagle Byte, Eagle Byte founder, digital engineering studio, founder-led agency, innovation, engineering excellence, automation, digital transformation",
   alternates: {
     canonical: "https://eaglebyte.in/about/",
   },
   openGraph: {
-    title: "About Eagle Byte",
+    title: "Kartik Parmar — Founder of Eagle Byte",
     description:
-      "Innovation. Engineering excellence. Automation. Digital transformation.",
+      "Founder-led digital engineering studio. Innovation. Engineering excellence. Automation. Digital transformation.",
     url: "https://eaglebyte.in/about/",
-    images: [{ url: "https://eaglebyte.in/og-cover.jpg" }],
+    type: "profile",
+    images: [{ url: FOUNDER_PHOTO_URL, alt: "Kartik Parmar, founder of Eagle Byte" }],
   },
   twitter: {
-    title: "About Eagle Byte",
-    description: "Innovation. Engineering excellence. Automation.",
-    images: ["https://eaglebyte.in/og-cover.jpg"],
+    title: "Kartik Parmar — Founder of Eagle Byte",
+    description: "Founder-led digital engineering studio in Gujarat, India.",
+    images: [FOUNDER_PHOTO_URL],
   },
+};
+
+// ProfilePage schema: tells Google and AI search engines this page is the
+// canonical profile of Kartik Parmar, linked to the Eagle Byte org entity
+// defined in the root layout's @graph.
+const profileJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://eaglebyte.in/about/#profilepage",
+  url: "https://eaglebyte.in/about/",
+  name: "Kartik Parmar — Founder of Eagle Byte",
+  mainEntity: { "@id": "https://eaglebyte.in/#kartik-parmar" },
+  about: { "@id": "https://eaglebyte.in/#organization" },
 };
 
 export default function About() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }}
+      />
       <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 border-b border-border/80 overflow-hidden">
         {/* Decorative grid pattern and glow background */}
         <div className="pointer-events-none absolute inset-0 -z-10 grid-pattern opacity-30" />

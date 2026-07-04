@@ -6,8 +6,8 @@ export const contactInfo = {
   phoneHref: "tel:+919773405142",
   whatsapp:
     "https://wa.me/919773405142?text=Hi!%20I%27m%20interested%20in%20Eagle%20Byte%27s%20services.",
-  email: "contact@eaglebye.in",
-  emailHref: "mailto:contact@eaglebye.in",
+  email: "contact@eaglebyte.in",
+  emailHref: "mailto:contact@eaglebyte.in",
   location: "Gujarat, India",
   responseTime: "Within 24 hours",
   founder: "Kartik Parmar",
