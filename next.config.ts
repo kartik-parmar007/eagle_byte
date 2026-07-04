@@ -2,6 +2,11 @@ import type { NextConfig } from "next";
 import withBundleAnalyzer from "@next/bundle-analyzer";
 
 const nextConfig: NextConfig = {
+  // Static export — deployable to any static host (no Node server required)
+  output: "export",
+  // Emit /about/index.html instead of /about.html so plain web servers
+  // (Apache/cPanel/nginx) resolve routes without rewrite rules
+  trailingSlash: true,
   turbopack: {
     root: __dirname,
   },

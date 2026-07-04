@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   keywords:
     "projects, portfolio, V2 Enterprise, Sitaram Organic, client work, product engineering, web development results",
   alternates: {
-    canonical: "https://eaglebyte.in/projects",
+    canonical: "https://eaglebyte.in/projects/",
   },
   openGraph: {
     title: "Projects — Eagle Byte",
     description: "Real products. Real results.",
-    url: "https://eaglebyte.in/projects",
+    url: "https://eaglebyte.in/projects/",
     images: [{ url: "https://eaglebyte.in/og-cover.jpg" }],
   },
   twitter: {

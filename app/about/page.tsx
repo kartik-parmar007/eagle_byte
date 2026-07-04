@@ -31,13 +31,13 @@ export const metadata: Metadata = {
   keywords:
     "about Eagle Byte, digital engineering studio, founder-led agency, innovation, engineering excellence, automation, digital transformation",
   alternates: {
-    canonical: "https://eaglebyte.in/about",
+    canonical: "https://eaglebyte.in/about/",
   },
   openGraph: {
     title: "About Eagle Byte",
     description:
       "Innovation. Engineering excellence. Automation. Digital transformation.",
-    url: "https://eaglebyte.in/about",
+    url: "https://eaglebyte.in/about/",
     images: [{ url: "https://eaglebyte.in/og-cover.jpg" }],
   },
   twitter: {

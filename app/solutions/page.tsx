@@ -28,12 +28,12 @@ export const metadata: Metadata = {
   keywords:
     "healthcare software, fintech applications, edtech platforms, manufacturing automation, ecommerce development, startup MVP, industry solutions",
   alternates: {
-    canonical: "https://eaglebyte.in/solutions",
+    canonical: "https://eaglebyte.in/solutions/",
   },
   openGraph: {
     title: "Solutions by Industry — Eagle Byte",
     description: "Software patterns adapted for your industry.",
-    url: "https://eaglebyte.in/solutions",
+    url: "https://eaglebyte.in/solutions/",
     images: [{ url: "https://eaglebyte.in/og-cover.jpg" }],
   },
   twitter: {

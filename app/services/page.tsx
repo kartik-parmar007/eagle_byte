@@ -33,12 +33,12 @@ export const metadata: Metadata = {
   keywords:
     "custom website development, enterprise web applications, AI agents, workflow automation, SaaS development, cloud DevOps, business process digitization, maintenance and support",
   alternates: {
-    canonical: "https://eaglebyte.in/services",
+    canonical: "https://eaglebyte.in/services/",
   },
   openGraph: {
     title: "Services — Eagle Byte",
     description: "Engineering practices for teams that ship.",
-    url: "https://eaglebyte.in/services",
+    url: "https://eaglebyte.in/services/",
     images: [{ url: "https://eaglebyte.in/og-cover.jpg" }],
   },
   twitter: {

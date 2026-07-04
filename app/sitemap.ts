@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 const BASE_URL = "https://eaglebyte.in";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -12,31 +14,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${BASE_URL}/services`,
+      url: `${BASE_URL}/services/`,
       lastModified: today,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/solutions`,
+      url: `${BASE_URL}/solutions/`,
       lastModified: today,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/projects`,
+      url: `${BASE_URL}/projects/`,
       lastModified: today,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/about`,
+      url: `${BASE_URL}/about/`,
       lastModified: today,
       changeFrequency: "yearly",
       priority: 0.6,
     },
     {
-      url: `${BASE_URL}/contact`,
+      url: `${BASE_URL}/contact/`,
       lastModified: today,
       changeFrequency: "yearly",
       priority: 0.7,

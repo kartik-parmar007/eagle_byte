@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   keywords:
     "contact Eagle Byte, book strategy call, free consultation, hire developers, project quote, digital engineering agency",
   alternates: {
-    canonical: "https://eaglebyte.in/contact",
+    canonical: "https://eaglebyte.in/contact/",
   },
   openGraph: {
     title: "Contact Eagle Byte",
     description: "Let's build something great.",
-    url: "https://eaglebyte.in/contact",
+    url: "https://eaglebyte.in/contact/",
     images: [{ url: "https://eaglebyte.in/og-cover.jpg" }],
   },
   twitter: {
