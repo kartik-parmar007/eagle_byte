@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-const rotators = ["Websites.", "AI Agents.", "Automations.", "SaaS Products."];
+const rotators = ["Websites.", "Agentic AI.", "DevOps.", "Automations.", "SaaS Products."];
 
 export function Hero() {
   return (
@@ -95,18 +95,17 @@ export function Hero() {
                   className="animate-draw"
                 />
               </svg>
-            </span>
+            </span>{" "}
+            <span className="text-ink/80 font-normal">of</span>
             <span className="mt-3 block text-center">
-              <span className="text-ink/80">of </span>
               <span
-                className="relative inline-block h-[1.25em] overflow-hidden align-bottom text-left"
-                style={{ minWidth: "11ch" }}
+                className="relative inline-block h-[1.25em] overflow-hidden align-bottom text-center w-full"
               >
                 <span className="animate-rotate-words flex flex-col text-gradient font-bold">
                   {[...rotators, rotators[0]].map((w, i) => (
                     <span
                       key={i}
-                      className="leading-[1.25] whitespace-nowrap pb-[0.1em]"
+                      className="leading-[1.25] whitespace-nowrap pb-[0.1em] text-center block w-full"
                     >
                       {w}
                     </span>
