@@ -3,7 +3,7 @@ import { Reveal } from "@/components/shared/Reveal";
 
 export function Process() {
   return (
-    <section className="relative py-12 md:py-16 overflow-hidden">
+    <section className="cv-auto relative py-12 md:py-16 overflow-hidden">
       {/* subtle background tint */}
       <div
         aria-hidden

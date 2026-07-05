@@ -7,7 +7,7 @@ export default function imageKitLoader({
   width: number;
   quality?: number;
 }) {
-  const endpoint = process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT || "https://ik.imagekit.io/21v-ofFfRO";
+  const endpoint = process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT || "https://ik.imagekit.io/eaglebyte";
 
   // Remove leading slash if present
   let path = src;

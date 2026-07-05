@@ -20,7 +20,7 @@ const icons: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function WhyEagleByte() {
   return (
-    <section className="relative py-12 md:py-16 overflow-hidden">
+    <section className="cv-auto relative py-12 md:py-16 overflow-hidden">
       {/* soft background depth */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-[#F5F8FF] via-white to-[#F8FAFF] dark:from-[#0B1022] dark:via-background dark:to-[#060A14]" />

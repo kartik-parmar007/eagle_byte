@@ -5,7 +5,7 @@ import { Reveal } from "@/components/shared/Reveal";
 
 export function ServicesBrief() {
   return (
-    <section className="relative py-12 md:py-16 overflow-hidden">
+    <section className="cv-auto relative py-12 md:py-16 overflow-hidden">
       {/* soft background depth */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[#F8FAFF] dark:bg-background" />

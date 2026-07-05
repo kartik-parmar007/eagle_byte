@@ -6,7 +6,7 @@ import { Reveal } from "@/components/shared/Reveal";
 
 export function FeaturedProjects() {
   return (
-    <section className="relative py-12 md:py-16 bg-surface/60 border-y border-border">
+    <section className="cv-auto relative py-12 md:py-16 bg-surface/60 border-y border-border">
       <div className="container-x">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Reveal>

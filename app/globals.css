@@ -210,6 +210,13 @@
   @media (min-width: 1280px) { padding-inline: 2rem; }
 }
 
+/* Below-fold sections: browser skips style/layout/paint (and pauses their
+   animations) until scrolled near — no visual change, big main-thread win */
+@utility cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
 @utility text-gradient {
   background-image: var(--gradient-brand);
   -webkit-background-clip: text;

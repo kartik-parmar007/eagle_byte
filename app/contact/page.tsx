@@ -8,18 +8,18 @@ export const metadata: Metadata = {
   keywords:
     "contact Eagle Byte, book strategy call, free consultation, hire developers, project quote, digital engineering agency",
   alternates: {
-    canonical: "https://eaglebyte.in/contact/",
+    canonical: "https://www.eaglebyte.in/contact/",
   },
   openGraph: {
     title: "Contact Eagle Byte",
     description: "Let's build something great.",
-    url: "https://eaglebyte.in/contact/",
-    images: [{ url: "https://eaglebyte.in/og-cover.jpg" }],
+    url: "https://www.eaglebyte.in/contact/",
+    images: [{ url: "https://www.eaglebyte.in/og-cover.jpg" }],
   },
   twitter: {
     title: "Contact Eagle Byte",
     description: "Book a free strategy call.",
-    images: ["https://eaglebyte.in/og-cover.jpg"],
+    images: ["https://www.eaglebyte.in/og-cover.jpg"],
   },
 };
 

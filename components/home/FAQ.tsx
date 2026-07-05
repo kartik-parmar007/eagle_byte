@@ -8,7 +8,7 @@ import { Reveal } from "@/components/shared/Reveal";
 export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="relative py-12 md:py-16 bg-surface/60 border-y border-border">
+    <section className="cv-auto relative py-12 md:py-16 bg-surface/60 border-y border-border">
       <div className="container-x">
         <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-10">
           <Reveal>

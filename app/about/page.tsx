@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Mail, Phone, MessageCircle } from "lucide-react";
+import { ArrowRight, Mail, Phone, MessageCircle, Linkedin } from "lucide-react";
 import { Reveal } from "@/components/shared/Reveal";
 import { contactInfo } from "@/lib/site-content";
 import Image from "next/image";
@@ -31,19 +31,19 @@ export const metadata: Metadata = {
   keywords:
     "about Eagle Byte, digital engineering studio, founder-led agency, innovation, engineering excellence, automation, digital transformation",
   alternates: {
-    canonical: "https://eaglebyte.in/about/",
+    canonical: "https://www.eaglebyte.in/about/",
   },
   openGraph: {
     title: "About Eagle Byte",
     description:
       "Innovation. Engineering excellence. Automation. Digital transformation.",
-    url: "https://eaglebyte.in/about/",
-    images: [{ url: "https://eaglebyte.in/og-cover.jpg" }],
+    url: "https://www.eaglebyte.in/about/",
+    images: [{ url: "https://www.eaglebyte.in/og-cover.jpg" }],
   },
   twitter: {
     title: "About Eagle Byte",
     description: "Innovation. Engineering excellence. Automation.",
-    images: ["https://eaglebyte.in/og-cover.jpg"],
+    images: ["https://www.eaglebyte.in/og-cover.jpg"],
   },
 };
 
@@ -127,6 +127,16 @@ export default function About() {
                   >
                     <MessageCircle className="h-4 w-4 text-primary" />
                     <span>WhatsApp Chat</span>
+                  </a>
+
+                  <a
+                    href={contactInfo.founderLinkedin}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-white dark:bg-card px-5 py-2.5 text-[14px] font-medium text-ink hover:border-primary/50 hover:bg-primary/5 dark:hover:bg-primary/5 shadow-sm transition-all"
+                  >
+                    <Linkedin className="h-4 w-4 text-primary" />
+                    <span>LinkedIn</span>
                   </a>
                 </div>
               </div>

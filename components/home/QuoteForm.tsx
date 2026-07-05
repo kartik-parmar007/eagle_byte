@@ -5,7 +5,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
   return (
     <section
       id="quote"
-      className={`relative overflow-hidden ${compact ? "py-10" : "py-12 md:py-16"}`}
+      className={`cv-auto relative overflow-hidden ${compact ? "py-10" : "py-12 md:py-16"}`}
     >
       {/* soft background depth */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">

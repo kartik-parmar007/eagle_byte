@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink, Mail, Phone, MessageCircle, MapPin } from "lucide-react";
+import { Mail, Phone, MessageCircle, Linkedin, Instagram } from "lucide-react";
 import { contactInfo } from "@/lib/site-content";
 
 const cols = [
@@ -41,7 +41,7 @@ const cols = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border bg-white dark:bg-background">
+    <footer className="cv-auto relative border-t border-border bg-white dark:bg-background">
       <div className="container-x py-10 md:py-12">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
           <div>
@@ -51,7 +51,7 @@ export function Footer() {
                 alt="Eagle Byte"
                 width={56}
                 height={56}
-                className="h-14 w-14 object-contain"
+                className="h-14 w-14 object-contain dark:invert dark:hue-rotate-180"
               />
               <span className="text-[17px] font-semibold tracking-tight text-ink">
                 Eagle<span className="text-primary">Byte</span>
@@ -107,12 +107,17 @@ export function Footer() {
               },
               { Icon: Mail, href: contactInfo.emailHref, label: "Email" },
               {
-                Icon: ExternalLink,
-                href: "https://www.linkedin.com/in/kartikparmar-dev/",
+                Icon: Linkedin,
+                href: contactInfo.linkedin,
                 label: "LinkedIn",
                 external: true,
               },
-              { Icon: MapPin, href: "/contact", label: "Location" },
+              {
+                Icon: Instagram,
+                href: contactInfo.instagram,
+                label: "Instagram",
+                external: true,
+              },
             ].map(({ Icon, href, label, external }) => (
               <a
                 key={label}

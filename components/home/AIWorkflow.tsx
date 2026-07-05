@@ -13,7 +13,7 @@ const icons = [MousePointerClick, Brain, Database, Mail, Users, BarChart3];
 
 export function AIWorkflow() {
   return (
-    <section className="relative py-12 md:py-16 bg-[#0B1F4D] text-white overflow-hidden">
+    <section className="cv-auto relative py-12 md:py-16 bg-[#0B1F4D] text-white overflow-hidden">
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
         style={{

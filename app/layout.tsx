@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Analytics, GtmNoScript } from "@/components/site/Analytics";
+import { contactInfo } from "@/lib/site-content";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -22,7 +23,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://eaglebyte.in"),
+  metadataBase: new URL("https://www.eaglebyte.in"),
   title: {
     default: "Eagle Byte — Premium Digital Engineering Studio",
     template: "%s | Eagle Byte",
@@ -63,12 +64,27 @@ export const metadata: Metadata = {
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://www.eaglebyte.in/#organization",
   name: "Eagle Byte",
-  url: "https://eaglebyte.in",
-  logo: "https://eaglebyte.in/eaglebyte-logo-transparent.webp",
+  alternateName: "EagleByte",
+  url: "https://www.eaglebyte.in",
+  logo: "https://www.eaglebyte.in/eaglebyte-logo-transparent.webp",
   description:
     "Premium digital engineering studio specializing in custom websites, enterprise web applications, AI agents, and workflow automation.",
-  sameAs: [],
+  email: contactInfo.email,
+  telephone: contactInfo.phone,
+  founder: {
+    "@type": "Person",
+    name: contactInfo.founder,
+    jobTitle: contactInfo.founderRole,
+    sameAs: contactInfo.founderLinkedin,
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "Gujarat",
+    addressCountry: "IN",
+  },
+  sameAs: [contactInfo.linkedin, contactInfo.instagram, contactInfo.founderLinkedin],
 };
 
 export default function RootLayout({

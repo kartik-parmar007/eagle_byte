@@ -19,7 +19,8 @@ export function Hero() {
           src="/hero-bg.webp"
           alt=""
           fill
-          priority
+          preload
+          fetchPriority="high"
           sizes="100vw"
           className="object-cover opacity-25 dark:opacity-10 mix-blend-overlay dark:mix-blend-normal"
         />

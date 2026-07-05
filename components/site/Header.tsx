@@ -36,8 +36,8 @@ export function Header() {
             alt="Eagle Byte"
             width={64}
             height={64}
-            className="h-14 w-14 md:h-16 md:w-16 object-contain"
-            priority
+            className="h-14 w-14 md:h-16 md:w-16 object-contain dark:invert dark:hue-rotate-180"
+            preload
           />
         </Link>
 
