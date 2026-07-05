@@ -68,12 +68,12 @@ export default function About() {
           <div className="grid gap-10 md:grid-cols-[1.2fr_2fr] items-center">
             {/* Founder Image Card */}
             <Reveal delay={0.1}>
-              <div className="group relative mx-auto md:mx-0 max-w-[320px] w-full aspect-square rounded-[32px] overflow-hidden border border-border/80 shadow-[var(--shadow-elegant)] bg-card hover:border-primary/40 hover:shadow-[0_20px_50px_-20px_rgba(10,92,255,0.25)] transition-all duration-500">
+              <div className="group relative mx-auto md:mx-0 max-w-[360px] md:max-w-none w-full aspect-[5/4] rounded-[32px] overflow-hidden border border-border/80 shadow-[var(--shadow-elegant)] bg-card hover:border-primary/40 hover:shadow-[0_20px_50px_-20px_rgba(10,92,255,0.25)] transition-all duration-500">
                 <Image 
-                  src="/kartik-parmar.webp" 
+                  src="/public/professional%20image%20with%20logo.png" 
                   alt={contactInfo.founder} 
-                  width={320}
-                  height={320}
+                  width={520}
+                  height={416}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
